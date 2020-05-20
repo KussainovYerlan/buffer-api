@@ -3,17 +3,17 @@ version: '3'
 services:
     db:
         container_name: db
-        image: mariadb:10.1
+        image: mysql:5.7
         ports:
             - 33061:3306
         restart: always
         volumes:
             - ./docker/data/db:/var/lib/mysql:delegated,rw
         environment:
-            MYSQL_ROOT_PASSWORD: p;\P!`2#-^%BEyp6
+            MYSQL_ROOT_PASSWORD: rootpasswd
             MYSQL_DATABASE: buffer
-            MYSQL_USER: buffer
-            MYSQL_PASSWORD: ^6tS.F/Mx.@?!$Rd
+            MYSQL_USER: user
+            MYSQL_PASSWORD: userpasswd
         networks:
             - app
 
